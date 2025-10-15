@@ -1,0 +1,65 @@
+﻿@model IEnumerable<practice_12_october.Models.HealthRecord>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RecordDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.F_Vaccine)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.L_Vaccine)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Treatment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Health_Condition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ManageCow)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecordDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.F_Vaccine)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.L_Vaccine)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Treatment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Health_Condition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ManageCow.Tag_Number)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.H_RecordId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.H_RecordId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.H_RecordId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

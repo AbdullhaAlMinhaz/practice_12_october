@@ -1,0 +1,54 @@
+﻿@model practice_12_october.Models.HealthRecord
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>HealthRecord</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RecordDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RecordDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.F_Vaccine)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.F_Vaccine)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.L_Vaccine)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.L_Vaccine)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Treatment)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Treatment)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Health_Condition)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Health_Condition)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ManageCow)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ManageCow.Tag_Number)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.H_RecordId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
